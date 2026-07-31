@@ -158,11 +158,16 @@ if st.button("Plan My Trip", type="primary"):
         )
         st.stop()
         
-    # Check if vector DB is loaded
+       # Check if vector DB is loaded; build it automatically on first cloud run
     if not os.path.exists(config.CHROMA_DIR) or len(os.listdir(config.CHROMA_DIR)) == 0:
-        st.warning("⚠️ **Vector Database is Empty**")
-        st.info("Please run the ingestion script first: `python scripts/ingest.py` before querying.")
-        st.stop()
+        with st.spinner("Preparing the travel knowledge base for the first run..."):
+            try:
+                from scripts.ingest import main as run_ingestion
+                run_ingestion()
+                st.success("Knowledge base prepared successfully.")
+            except Exception as e:
+                st.error(f"Failed to prepare the vector database: {e}")
+                st.stop()
 
     # 5. Executing Workflow
     with st.status("Agentic workflow planning trip...", expanded=True) as status:
