@@ -18,7 +18,7 @@ env/
 
 # Databases & Local Data
 data/chroma/
-data/raw/*
+
 !data/raw/.gitkeep
 
 # IDEs
