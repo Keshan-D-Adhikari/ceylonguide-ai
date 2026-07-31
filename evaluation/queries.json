@@ -1,0 +1,50 @@
+[
+  {
+    "query": "wildlife safaris and leopard spotting in Sri Lanka",
+    "expected_sources": ["11_yala.md", "12_wilpattu.md"]
+  },
+  {
+    "query": "beaches, coastal bars, surfing and coastal relaxation",
+    "expected_sources": ["14_mirissa.md", "15_unawatuna.md", "16_bentota.md", "18_arugam_bay.md"]
+  },
+  {
+    "query": "ancient ruins, historic temples and sacred cities",
+    "expected_sources": ["06_anuradhapura.md", "07_polonnaruwa.md", "03_kandy.md"]
+  },
+  {
+    "query": "hiking, mountain gap, waterfalls and tea plantations",
+    "expected_sources": ["08_ella.md", "09_nuwara_eliya.md", "10_horton_plains.md"]
+  },
+  {
+    "query": "sacred footprint mountain night climbing hike pilgrimage",
+    "expected_sources": ["22_adams_peak.md"]
+  },
+  {
+    "query": "deep sea whale watching and dolphins excursions",
+    "expected_sources": ["14_mirissa.md", "21_kalpitiya.md"]
+  },
+  {
+    "query": "sacred caves golden buddha temple",
+    "expected_sources": ["05_dambulla.md"]
+  },
+  {
+    "query": "galle lighthouse fortified ramparts colonial history",
+    "expected_sources": ["13_galle.md"]
+  },
+  {
+    "query": "northern tamil heritage and Jaffna crab curry",
+    "expected_sources": ["19_jaffna.md"]
+  },
+  {
+    "query": "tropical primary rainforest trek biodiversity",
+    "expected_sources": ["20_sinharaja.md"]
+  },
+  {
+    "query": "Dutch canal boat ride and airport proximity fish markets",
+    "expected_sources": ["02_negombo.md"]
+  },
+  {
+    "query": "capital city shopping temples and ocean front strolls",
+    "expected_sources": ["01_colombo.md"]
+  }
+]
