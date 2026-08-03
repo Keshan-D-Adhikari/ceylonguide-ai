@@ -119,7 +119,7 @@ The database indexes **22 Sri Lankan destinations** (Colombo, Ella, Yala, Galle,
 ---
 
 ## Testing & Quality Assurance
-Run the unit test suite containing 31 test assertions (covering metrics, loaders, chunkers, routing logic, safety, and LangGraph state passing):
+Run the unit test suite (covering metrics, loaders, chunkers, routing logic, safety, tool functions, and LangGraph state passing):
 ```bash
 python -m pytest -v
 ```
