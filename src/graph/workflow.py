@@ -6,7 +6,6 @@ from src.agents.retrieval import retrieve_tourism_info
 from src.agents.planner import plan_trip
 from src.agents.critic import evaluate_itinerary
 from src.agents.synthesizer import synthesize_final_response
-from src.rag.retriever import TourismRetriever
 
 logger = logging.getLogger(__name__)
 
@@ -96,8 +95,6 @@ def planner_node(state: AgentState) -> dict:
     docs = state.get("retrieved_documents", [])
     
     # Format retrieved context
-    from src.rag.retriever import TourismRetriever
-    # Mock/dummy formatting since we don't have retriever instance, format directly:
     evidence_blocks = []
     for idx, doc in enumerate(docs):
         evidence_blocks.append(
