@@ -53,17 +53,17 @@ def synthesize_final_response(draft_itinerary: dict, retrieved_docs: list[dict])
     for doc in retrieved_docs:
         meta = doc.get("metadata", {})
         filename = meta.get("source_file", "unknown")
-        title = meta.get("title", filename)
-        source_map[filename] = title
-        
+        doc_title = meta.get("title", filename)
+        source_map[filename] = doc_title
+
     if sources_used:
         for src in sorted(list(sources_used)):
-            title = source_map.get(src, src.replace("_", " ").replace(".md", "").title())
-            markdown_lines.append(f"- **{title}** (`{src}`)")
+            src_title = source_map.get(src, src.replace("_", " ").replace(".md", "").title())
+            markdown_lines.append(f"- **{src_title}** (`{src}`)")
     else:
         # Fallback to general retrieval logs
-        for filename, title in source_map.items():
-            markdown_lines.append(f"- **{title}** (`{filename}`)")
+        for filename, doc_title in source_map.items():
+            markdown_lines.append(f"- **{doc_title}** (`{filename}`)")
             
     # 4. Add academic disclaimer & planning limits
     markdown_lines.append("\n> [!NOTE]")
