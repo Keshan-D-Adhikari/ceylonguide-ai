@@ -61,16 +61,16 @@ groq_ok = len(config.GROQ_API_KEY.strip()) > 0
 or_ok = len(config.OPENROUTER_API_KEY.strip()) > 0
 
 st.sidebar.markdown(
-    f"🟢 **Groq Router Model**: `Configured`" if groq_ok else "🔴 **Groq Router Model**: `Not Configured`"
+    "🟢 **Groq Router Model**: `Configured`" if groq_ok else "🔴 **Groq Router Model**: `Not Configured`"
 )
 st.sidebar.markdown(
-    f"🟢 **OpenRouter Planner**: `Configured`" if or_ok else "🔴 **OpenRouter Planner**: `Not Configured`"
+    "🟢 **OpenRouter Planner**: `Configured`" if or_ok else "🔴 **OpenRouter Planner**: `Not Configured`"
 )
 
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Configuration Details")
-st.sidebar.markdown(f"- **RAG Collections**: `ceylonguide_tourism`")
-st.sidebar.markdown(f"- **Embedding Model**: `all-MiniLM-L6-v2` (Local)")
+st.sidebar.markdown("- **RAG Collections**: `ceylonguide_tourism`")
+st.sidebar.markdown("- **Embedding Model**: `all-MiniLM-L6-v2` (Local)")
 st.sidebar.markdown(f"- **Router model**: `{config.GROQ_ROUTER_MODEL}`")
 st.sidebar.markdown(f"- **Planner model**: `{config.OPENROUTER_REASONING_MODEL}`")
 
@@ -157,8 +157,8 @@ if st.button("Plan My Trip", type="primary"):
             """
         )
         st.stop()
-        
-       # Check if vector DB is loaded; build it automatically on first cloud run
+
+    # Check if vector DB is loaded; build it automatically on first cloud run
     if not os.path.exists(config.CHROMA_DIR) or len(os.listdir(config.CHROMA_DIR)) == 0:
         with st.spinner("Preparing the travel knowledge base for the first run..."):
             try:
