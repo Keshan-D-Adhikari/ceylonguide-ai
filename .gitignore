@@ -19,8 +19,6 @@ env/
 # Databases & Local Data
 data/chroma/
 
-!data/raw/.gitkeep
-
 # IDEs
 .vscode/
 .idea/
