@@ -16,4 +16,4 @@ CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", "800"))
 CHUNK_OVERLAP = int(os.getenv("CHUNK_OVERLAP", "120"))
 TOP_K = int(os.getenv("TOP_K", "5"))
 CHROMA_DIR = os.getenv("CHROMA_DIR", "data/chroma")
-EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
