@@ -1,5 +1,8 @@
 import os
 import re
+import logging
+
+logger = logging.getLogger(__name__)
 
 class Document:
     def __init__(self, page_content: str, metadata: dict):
@@ -87,6 +90,6 @@ def load_directory(dir_path: str) -> list[Document]:
                 doc = load_document(file_path)
                 documents.append(doc)
             except Exception as e:
-                print(f"Error loading {filename}: {e}")
+                logger.warning(f"Error loading {filename}: {e}")
                 
     return documents
