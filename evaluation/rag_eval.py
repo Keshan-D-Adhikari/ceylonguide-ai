@@ -55,7 +55,11 @@ def run_evaluation():
         dataset = json.load(f)
         
     print(f"Loaded {len(dataset)} evaluation queries.")
-    
+
+    if len(dataset) == 0:
+        print(f"Error: '{query_file}' contains no evaluation queries.")
+        sys.exit(1)
+
     # Initialize retriever
     embeddings = SentenceTransformerEmbeddings(model_name=config.EMBEDDING_MODEL)
     vector_store = VectorStore(persist_dir=config.CHROMA_DIR, embedding_model=embeddings)
